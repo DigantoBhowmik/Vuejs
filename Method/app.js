@@ -13,6 +13,3 @@ var app = new Vue({
         }
     }
 });
-
-
-
