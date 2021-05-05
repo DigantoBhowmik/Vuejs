@@ -3,13 +3,16 @@ var app = new Vue({
     data:{
         count: 0,
     },
-    method:{
-        increase: function(){
-            this.count=this.count+1;
+    methods:{
+        increase: function(x){
+            this.count=this.count+x;
         },
 
-        decrease: function(){
-            this.count=this.count-1;
+        decrease: function(x){
+            if((this.count-x)>=0)
+            {
+                this.count=this.count-x;
+            }
         }
     }
 });

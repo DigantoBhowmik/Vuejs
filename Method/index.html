@@ -10,8 +10,11 @@
 <body>
     <div id="app">
         <h2>Counter: {{ count }}</h2>
-        <button @click.prevent="increase">Increase</button>
-        <button @click.prevent="decrease">Decrease</button>
+        <button @click.prevent="increase(1)">Increase</button>
+        <button @click.prevent="decrease(1)">Decrease</button>
+
+        <button @click.prevent="increase(2)">Increase by 2</button>
+        <button @click.prevent="decrease(2)">Decrease by 2</button>
         
     </div>
 
