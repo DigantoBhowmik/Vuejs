@@ -5,13 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show Book</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
         <div v-if="showbook">
-            <h3>{{name}} </h3>
-            <br>
-            <p>{{author}}</p>
+            <ul >
+                <li v-for="book in books" :class="{fav: book.isFav}" @click="click1(book)">
+                    <h3>{{book.name}} </h3>
+                    <br>
+                    <p>{{book.author}}</p>
+                </li>
+            </ul>
+            
         </div>
         <div v-else>Press Show Button</div>
         <button @click="hidebook">
