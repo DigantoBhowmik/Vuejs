@@ -1,26 +1,26 @@
 <template>
   <h1>Time Rection</h1>
   <button @click="start" :disabled="isPlay">Play</button>
-  <Box v-if="isPlay" :delay="delay"/>
+  <Block v-if="isPlay" :delay="time" />
 </template>
 
 <script>
 
-import Box from './components/Block'
+import Block from './components/Block.vue'
+
 export default {
   name: 'App',
-  components:  { Box },
+  components:  { Block },
   data(){
     return{
       isPlay:false,
-      delay:null
+      time:null
     }
   },
   methods:{
     start(){
-      this.delay=20000000000+Math.random()*500000000000
-      this.isPlay=true
-      console.log(this.isPlay)
+      this.time=2000+Math.random()*5000
+      this.isPlay=true    
      
     }
   }

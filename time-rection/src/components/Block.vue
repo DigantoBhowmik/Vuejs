@@ -1,12 +1,22 @@
 <template>
-  <div class="block">
+  <div class="block" v-show="showBox">
       Click me
   </div>
 </template>
 
 <script>
 export default {
-  props: ['delay']
+  props: ['delay'],
+  data(){
+    return{
+      showBox:false
+    }
+  },
+  mounted(){
+    setTimeout(() =>{
+      this.showBox=true
+    },this.delay)
+  }
 }
 </script>
 
